@@ -8,7 +8,6 @@ powerdata<-subset(powerdata,subset = (powerdata$Date =='2007-02-01' | powerdata$
 #get datetime
 powerdata$datetime<-paste(powerdata$Date,powerdata$Time)
 powerdata$datetime<- as.POSIXct(powerdata$datetime)
- 
 #plot to png device
 png("plot3.png", width = 480, height = 480)
 with(powerdata,plot(datetime, as.numeric(Sub_metering_1), type="l", xlab="", ylab="Energy sub metering"))
